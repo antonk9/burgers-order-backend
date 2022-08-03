@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import indexRouter from './routes/index.js';
 import categoriesRouter from './routes/categories.js';
 import productsRouter from './routes/products.js';
+import authRouter from './routes/auth.js'
 import fileUpload from 'express-fileupload';
 import cors from 'cors';
 
@@ -18,6 +19,7 @@ app.use(fileUpload({}))
 app.use('/', indexRouter)
 app.use('/categories', categoriesRouter)
 app.use('/products', productsRouter)
+app.use('/auth', authRouter)
 
 
 async function startApp() {
