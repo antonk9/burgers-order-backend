@@ -32,7 +32,7 @@ class AuthService {
     }
 
     async find() {
-        const users = await User.find();
+        const users = await User.find({}, {password: 0});
 
         return users
     }

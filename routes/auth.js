@@ -14,6 +14,6 @@ router.post('/registration', [
     check('password', "Password should not be less than 4 symbols").isLength({min: 4}).notEmpty(),
 ], AuthController.registration)
 router.post('/login', AuthController.login)
-router.get('/users', roleMiddleware(['USER']), AuthController.getUsers)
+router.get('/users', roleMiddleware(['ADMIN']), AuthController.getUsers)
 
 export default router;
